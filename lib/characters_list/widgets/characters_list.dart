@@ -1,10 +1,10 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rick_n_morty_flutter_app/characters_list/bloc/characters_bloc.dart';
 import 'package:rick_n_morty_flutter_app/characters_list/widgets/bottom_loader.dart';
 
-import '../widgets/character_list_item.dart';
+import '../../character_detail_info/views/character_detail_info_page.dart';
+import 'character_list_item.dart';
 
 class CharactersList extends StatefulWidget {
   const CharactersList({super.key});
@@ -38,14 +38,14 @@ class _CharactersListState extends State<CharactersList> {
               return index >= state.characters.length
                   ? const BottomLoader()
                   : GestureDetector(
-                      // onTap: () async {
-                      //   await Navigator.push(
-                      //       context,
-                      //       MaterialPageRoute(builder: (context) =>
-                      //           CharacterDetailInfoPage(title: 'Character Info',
-                      //               characterId: state.characters[index].id))
-                      //   );
-                      // },
+                      onTap: () async {
+                        await Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) =>
+                                CharacterDetailInfoPage(title: 'Character Info',
+                                    characterId: state.characters[index].id))
+                        );
+                      },
                       child: Card(
                           child: CharacterListItem(
                               name: state.characters[index].name,

@@ -1,8 +1,6 @@
 
 import 'package:flutter/material.dart';
 
-import '../models/character.dart';
-
 class CharacterListItem extends StatelessWidget {
   const CharacterListItem({
     super.key,

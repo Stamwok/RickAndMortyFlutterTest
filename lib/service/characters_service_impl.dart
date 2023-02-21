@@ -1,6 +1,6 @@
 
-import 'package:rick_n_morty_flutter_app/characters_list/models/character.dart';
-import 'package:rick_n_morty_flutter_app/characters_list/models/characters_response.dart';
+import 'package:rick_n_morty_flutter_app/models/character.dart';
+import 'package:rick_n_morty_flutter_app/models/characters_response.dart';
 import 'package:rick_n_morty_flutter_app/service/characters_service.dart';
 
 import '../ApiClient/RickAndMortyApiClient.dart';
@@ -19,7 +19,7 @@ class CharactersServiceImpl extends CharactersService {
 
   @override
   Future<List<Character>> getCharactersList() async {
-    final jsonData = await apiClient.request();
+    final jsonData = await apiClient.request(method: '/character');
     final charactersResponse = CharactersResponse.fromJson(jsonData);
     nextPage = charactersResponse.info.next;
     prevPage = charactersResponse.info.prev;

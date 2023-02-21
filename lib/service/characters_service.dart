@@ -1,6 +1,6 @@
 
-import '../characters_list/models/character.dart';
-import '../characters_list/models/characters_response.dart';
+import '../models/character.dart';
+import '../models/characters_response.dart';
 
 abstract class CharactersService {
   Future<List<Character>> getCharactersList();
