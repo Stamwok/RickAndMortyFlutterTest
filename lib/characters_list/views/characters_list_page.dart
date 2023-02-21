@@ -11,7 +11,7 @@ class CharactersListPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Posts')),
+      appBar: AppBar(title: const Text('Characters list')),
       body: BlocProvider(
         create: (_) => CharactersListBloc(charactersService: CharactersServiceImpl())..add(CharactersFetched()),
         child: const CharactersList(),

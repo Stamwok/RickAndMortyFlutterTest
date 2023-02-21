@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
@@ -9,7 +11,7 @@ import 'package:rick_n_morty_flutter_app/service/characters_service.dart';
 part 'characters_event.dart';
 part 'characters_state.dart';
 
-// ignore_for_file: avoid_print
+
 
 const throttleDuration = Duration(milliseconds: 1000);
 
@@ -57,4 +59,6 @@ class CharactersListBloc extends Bloc<CharactersListEvent, CharactersListState> 
       emit(state.copyWith(status: CharactersListStatus.failure));
     }
   }
+
+
 }

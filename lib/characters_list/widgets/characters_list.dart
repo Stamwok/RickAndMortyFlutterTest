@@ -38,13 +38,11 @@ class _CharactersListState extends State<CharactersList> {
               return index >= state.characters.length
                   ? const BottomLoader()
                   : GestureDetector(
-                      onTap: () async {
-                        await Navigator.push(
+                      onTap: () {
+                        Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) =>
-                                CharacterDetailInfoPage(title: 'Character Info',
-                                    characterId: state.characters[index].id))
-                        );
+                            MaterialPageRoute(
+                                builder: (context) => CharacterDetailInfoPage(characterId: state.characters[index].id)));
                       },
                       child: Card(
                           child: CharacterListItem(
