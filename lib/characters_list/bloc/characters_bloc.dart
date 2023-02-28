@@ -59,6 +59,4 @@ class CharactersListBloc extends Bloc<CharactersListEvent, CharactersListState> 
       emit(state.copyWith(status: CharactersListStatus.failure));
     }
   }
-
-
 }
